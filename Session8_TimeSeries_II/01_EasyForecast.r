@@ -63,6 +63,19 @@ rwf(birthstimeseries,drift=T,10)
 data(goog)
 data("auscafe")
 
+autoplot(goog)
+autoplot(naive(goog,100))
+autoplot(snaive(goog,100))
+autoplot(rwf(goog,100))
 
+aus <- log(auscafe)
+autoplot(aus)
+autoplot(naive(aus,100))
+autoplot(snaive(aus,100, drift = T))
+autoplot(rwf(aus,100, drift = T))
 
+ns <- ts(goog[goog > 600], frequency = 12)
+autoplot(ns)
+rwf(ns, 5, drift = T)
+autoplot(rwf(ns, 100))
 
