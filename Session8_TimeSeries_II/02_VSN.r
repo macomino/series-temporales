@@ -1,3 +1,9 @@
+autoplot(elec)
+
+BoxCox.lambda(elec)
+autoplot(BoxCox(elec, lambda = 0.26))
+
+
 ############################################################
 # DATA TRANSFORMATION
 ###########################################################
@@ -38,7 +44,11 @@ fit %>% forecast(method='naive') %>%
 elecequip %>% stlf(method='naive') %>%
   autoplot() + ylab("New orders index") + xlab("Year")
 
-
+seriesen <- ts(sin(c(0:50)))
+autoplot(seriesen)
+autoplot(snaive(seriesen,100))
+autoplot(naive(seriesen,10))
+autoplot(rwf(seriesen,10))
 
 ################## VSN ###################################
 # use three variance stabilizating methods on souvenir data

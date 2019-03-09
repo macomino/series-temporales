@@ -79,3 +79,5 @@ autoplot(ns)
 rwf(ns, 5, drift = T)
 autoplot(rwf(ns, 100))
 
+
+
