@@ -76,6 +76,8 @@ ggtsdisplay(diff(eeadj))
 
 (fit <- Arima(eeadj, order=c(3,1,1)))
 
+fit <- auto.arima(elecequip, lambda="auto")
+
 checkresiduals(fit)
 
 fit %>% forecast %>% autoplot
